@@ -150,7 +150,7 @@
                                             <a href="{{ route('admin.users.edit', $user) }}" 
                                                class="btn btn-warning"
                                                title="Edit">
-                                                <i class="bi bi-pencil"></i>
+                                                <i class="bi bi-pencil"></i>Edit
                                             </a>
                                             
                                             @if($user->has_voted && $user->user_type === 'student')
@@ -160,23 +160,23 @@
                                                       onsubmit="return confirm('Reset voting status for this user?')">
                                                     @csrf
                                                     @method('PATCH')
-                                                    <button type="submit" class="btn btn-info" title="Reset Vote">
-                                                        <i class="bi bi-arrow-counterclockwise"></i>
+                                                    <button type="submit" class="btn btn-info rounded-start-0" title="Reset Vote">
+                                                        <i class="bi bi-arrow-counterclockwise"></i> Res
                                                     </button>
                                                 </form>
                                             @endif
                                             
-                                            <form action="{{ route('admin.users.destroy', $user) }}" 
+                                            <form action="{{ route('admin.users.destroy', $user) }}"
                                                   method="POST" 
                                                   class="d-inline"
                                                   onsubmit="return confirm('Are you sure you want to delete this user?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" 
-                                                        class="btn btn-danger"
+                                                        class="btn btn-danger rounded-start-0"
                                                         title="Delete"
                                                         {{ $user->id === auth()->user()->id ? 'disabled' : '' }}>
-                                                    <i class="bi bi-trash"></i>
+                                                    <i class="bi bi-trash"></i> Del
                                                 </button>
                                             </form>
                                         </div>
